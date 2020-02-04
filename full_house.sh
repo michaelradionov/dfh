@@ -45,5 +45,7 @@ showdelimiter(){
 ###################################################
 
 full_house(){
-  df -h .
+  DIR=.
+  FREE_SPACE=$(df -H "$DIR" | grep -vE '^Filesystem|tmpfs|cdrom' | awk '{ print $5  }' | cut -d'%' -f1)
+  echo $FREE_SPACE
 }
