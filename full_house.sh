@@ -15,30 +15,7 @@
   D_VIOL='\033[1;34m'
   NC='\033[0m'
 
-###################################################
-# Common functions
-###################################################
 
-check_command_exec_status () {
-  if [[ $1 -eq 0 ]]
-    then
-      echo -e "${YELLOW}Success!${NC}"
-      echo
-  else
-    echo -e "${L_RED}ERROR${NC}"
-    echo
-  fi
-}
-
-title(){
-    echo -e "${D_VIOL}$1${NC}"
-}
-
-showdelimiter(){
-        echo
-        echo '-------------------'
-        echo
-}
 
 ###################################################
 # Main logic
