@@ -19,15 +19,12 @@
 
 
 
-
-
-###################################################
-# Main logic
-###################################################
-
 full_house(){
 
-#  Checking input parameters
+###################################################
+# Processing input parameters
+###################################################
+
 while [ -n "$1" ]
 do
   case "$1" in
@@ -86,7 +83,10 @@ do
 shift
 done
 
-#    Checking stuff
+###################################################
+# Processing exceptions
+###################################################
+
 #   If both Slack webhook either path isn't set
     if [ -z "$LOG_SLACK_WEBHOOK_URL" ]; then
 #        Trying to get Slack Webhook from .env
@@ -112,7 +112,10 @@ done
         DISK_SPACE_ALERT_PERCENTAGE=$DEFAULT_DISK_SPACE_ALERT_PERCENTAGE
     fi
 
-#  Logic
+###################################################
+# Main logic
+###################################################
+
   FREE_SPACE=$(df -H "$WEBSITE_PATH" | grep -vE '^Filesystem|tmpfs|cdrom' | awk '{ print $5  }' | cut -d'%' -f1)
 
   if [ "$FREE_SPACE" -ge "$DISK_SPACE_ALERT_PERCENTAGE" ]; then
