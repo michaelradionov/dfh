@@ -119,7 +119,7 @@ done
   FREE_SPACE=$(df -H "$WEBSITE_PATH" | grep -vE '^Filesystem|tmpfs|cdrom' | awk '{ print $5  }' | cut -d'%' -f1)
 
   if [ "$FREE_SPACE" -ge "$DISK_SPACE_ALERT_PERCENTAGE" ]; then
-    MESSAGE="Disk space is ${FREE_SPACE}. Limit of ${DISK_SPACE_ALERT_PERCENTAGE} exceeded!"
+    MESSAGE="$(hostname): Disk space is ${FREE_SPACE}. Limit of ${DISK_SPACE_ALERT_PERCENTAGE} exceeded!"
     echo "$MESSAGE"
 
 #    Sending to SLack
