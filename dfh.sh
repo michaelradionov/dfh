@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Full House – Disk free space monitor written in Bash
-# https://github.com/michaelradionov/full_house
+# https://github.com/michaelradionov/dfh
 
 # Variables
-  SCRIPT_NAME="full_house"
+  SCRIPT_NAME="dfh"
   SCRIPTS_FOLDER=~/.gg_tools
   DEFAULT_DISK_SPACE_ALERT_PERCENTAGE=90
   DEFAULT_PATH=.
@@ -19,7 +19,7 @@
 
 
 
-full_house(){
+dfh(){
 
 ###################################################
 # Processing input parameters
@@ -30,7 +30,7 @@ do
   case "$1" in
 
   "-h")
-  echo "Usage: full_house [-d <website_path_where_env_is> | -sw <slack_channel_url>] [-sс <slack_channel>] [-l <disk_space_alert_percentage>]"
+  echo "Usage: dfh [-d <website_path_where_env_is> | -sw <slack_channel_url>] [-sс <slack_channel>] [-l <disk_space_alert_percentage>]"
   return
   ;;
 
@@ -94,11 +94,11 @@ done
             echo -e "Found .env in ${WEBSITE_PATH}/.env. Sourcing ..."
             source "${WEBSITE_PATH}/.env"
             if [ -z $LOG_SLACK_WEBHOOK_URL ]; then
-              echo -e "${L_RED}There is no LOG_SLACK_WEBHOOK_URL variable in .env. Please specify -sw or -d parameter. See full_house -h${NC}"
+              echo -e "${L_RED}There is no LOG_SLACK_WEBHOOK_URL variable in .env. Please specify -sw or -d parameter. See dfh -h${NC}"
               return
             fi
           else
-            echo -e "${L_RED}Can't find .env file in given path to get Slack webhook URL... Please specify -sw or -d parameter. See full_house -h${NC}"
+            echo -e "${L_RED}Can't find .env file in given path to get Slack webhook URL... Please specify -sw or -d parameter. See dfh -h${NC}"
             return
         fi
     fi
