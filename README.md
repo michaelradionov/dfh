@@ -1,5 +1,5 @@
 # dfh
-df -h in Cron with Slack notifications
+`df -h` in Cron with Slack notifications
 
 ## Installation
 
