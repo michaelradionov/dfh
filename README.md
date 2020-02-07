@@ -23,6 +23,6 @@ then insert
 # Disk Space Monitoring
 WEBSITE_PATH=/path/to/website
 SLACK_CHANNEL=channel-name-without-hash
-0 * * * * /bin/bash -c "source /root/.gg_tools/dfh.sh && cd "$WEBSITE_PATH" && dfh -sc "$SLACK_CHANNEL""
-0 1 * * * /bin/bash -c "source /root/.gg_tools/dfh.sh && cd "$WEBSITE_PATH" && dfh -sc "$SLACK_CHANNEL" -l 80"
+0 * * * * /bin/bash -c "source /root/.gg_tools/dfh.sh && dfh -d "$WEBSITE_PATH" -sc "$SLACK_CHANNEL""
+0 1 * * * /bin/bash -c "source /root/.gg_tools/dfh.sh && dfh -d "$WEBSITE_PATH" -sc "$SLACK_CHANNEL" -l 80"
 ```
