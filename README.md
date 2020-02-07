@@ -7,6 +7,12 @@
 eval "$(curl "https://raw.githubusercontent.com/michaelradionov/gg_installer/master/gg_installer.sh")" && gg_installer dfh
 ```
 
+## Usage
+
+```shell
+dfh [-d <website_path_where_env_is> | -sw <slack_channel_url>] [-sс <slack_channel>] [-l <disk_space_alert_percentage>]
+```
+
 ## Usage with Cron
 
 ```shell
