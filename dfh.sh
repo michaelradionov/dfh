@@ -120,9 +120,11 @@ done
 
   if [ "$FREE_SPACE" -ge "$DISK_SPACE_ALERT_PERCENTAGE" ]; then
     MESSAGE="$(hostname): Disk space usage is ${FREE_SPACE}%. Limit of ${DISK_SPACE_ALERT_PERCENTAGE}% exceeded!"
-    echo "$MESSAGE"
+    echo -e "${L_RED}${MESSAGE}${NC}"
 
 #    Sending to SLack
     curl -X POST --data-urlencode "payload={\"channel\": \"${LOG_SLACK_CHANNEL}\", \"username\": \"Disk Space Monitoring Bot\", \"text\": \"${MESSAGE}\", \"icon_emoji\": \":admin:\"}" "$LOG_SLACK_WEBHOOK_URL"
+    else
+      echo "Disk space usage is ${FREE_SPACE}% and limit is ${DISK_SPACE_ALERT_PERCENTAGE}%. It's allright here!"
   fi
 }
