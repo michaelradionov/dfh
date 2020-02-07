@@ -27,7 +27,7 @@ SLACK_CHANNEL=channel-name-without-hash
 0 1 * * * /bin/bash -c "source /root/.gg_tools/dfh.sh && dfh -d "$WEBSITE_PATH" -sc "$SLACK_CHANNEL" -l 80"
 ```
 
-This will work ONLY if you have `.env` file in your website root folder and there is line like this
+This will work **only** if you have `.env` file in your website root folder and there is line like this
 
 ```shell
 LOG_SLACK_WEBHOOK_URL=https://hooks.slack.com/services/blablabla
