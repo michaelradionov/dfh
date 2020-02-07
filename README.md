@@ -20,9 +20,10 @@ crontab -e
 ```
 then insert
 ```shell
-# Disk Space Monitoring
 WEBSITE_PATH=/path/to/website
 SLACK_CHANNEL=channel-name-without-hash
+
+# Disk Space Monitoring
 0 * * * * /bin/bash -c "source /root/.gg_tools/dfh.sh && dfh -d "$WEBSITE_PATH" -sc "$SLACK_CHANNEL""
 0 1 * * * /bin/bash -c "source /root/.gg_tools/dfh.sh && dfh -d "$WEBSITE_PATH" -sc "$SLACK_CHANNEL" -l 80"
 ```
