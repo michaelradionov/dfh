@@ -1,4 +1,4 @@
-# dfh
+# Disk space monitoring script
 `df -h` in Cron with Slack notifications
 
 ## Installation
