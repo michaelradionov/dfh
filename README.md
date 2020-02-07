@@ -9,7 +9,7 @@ eval "$(curl "https://raw.githubusercontent.com/michaelradionov/gg_installer/mas
 
 ## Usage
 
-```shell
+```
 dfh [-d <website_path_where_env_is> | -sw <slack_channel_url>] [-sс <slack_channel>] [-l <disk_space_alert_percentage>]
 ```
 
